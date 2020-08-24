@@ -3,7 +3,7 @@ import { useLaunhDetailQuery } from '../../generated/graphql'
 import LaunchDet from './launchdet'
 
 const LaunchDetFunction = () => {
-    const { data, loading, error  } = useLaunhDetailQuery({variables : {id : '1'}})
+    const { data, loading, error  } = useLaunhDetailQuery({variables : {id : '13'}})
 
     if (loading){
         return <div>loading ...</div>
@@ -12,7 +12,6 @@ const LaunchDetFunction = () => {
         console.log(error);
         return <div>error</div>
     }
-
     return <LaunchDet data={data} />
 }
 

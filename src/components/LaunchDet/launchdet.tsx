@@ -5,8 +5,8 @@ interface Props {
     data: LaunhDetailQuery
 }
 
-const LaunchDetFunction: React.FC<Props> = ({ data }) => {
-    
+const LaunchDet: React.FC<Props> = ({ data }) => {
+
     return (
         <div>
             <div>
@@ -23,17 +23,20 @@ const LaunchDetFunction: React.FC<Props> = ({ data }) => {
                     <h6>Date : {data.launch?.launch_date_local}</h6>
                 </div>
                 <div>
-                    <h6>Launch Site : {data.launch?.launch_site}</h6>
+                    <h6>Launch Site : {data.launch?.launch_site?.site_name}</h6>
                 </div>
                 <div>
                     <p>{data.launch?.details}</p>
                 </div>
-                <div>
+                {!!data.launch?.links && !!data.launch.links.flickr_images && (
                     <div>
-                        <img src={data.launch?.links?.flickr_images} alt={i} />
+                        {data.launch.links.flickr_images.map(image => 
+                         image ? <img src={image} /> : null
+                        )}
                     </div>
-                </div>
+                )}
             </div>
         </div>
     )
 }
+export default LaunchDet;
