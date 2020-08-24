@@ -14,9 +14,9 @@ const Launch: React.FC<Props> = ({ data }) => {
                 <h2>{launch?.mission_name}</h2>
                 <h6>{launch?.launch_year}</h6>
                 <h6>{launch?.launch_success === true ? 'Success' : 'Failed'}</h6>
-                {/* <div>
-                    <Link to={`${launch?.flight_number}`} />
-                </div> */}
+                <div>
+                    <Link to={`launch/${launch?.flight_number}`}>Details</Link>
+                </div>
             </div>
         )
     })
