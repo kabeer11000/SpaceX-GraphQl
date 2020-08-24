@@ -1,10 +1,13 @@
 import React from 'react';
 import './App.css';
 
+// components 
+import LaunchFunction from './components/Launch/app'
+
 function App() {
   return (
     <div className="App">
-     <h1>hello wolrd </h1>
+      <LaunchFunction />
     </div>
   );
 }
