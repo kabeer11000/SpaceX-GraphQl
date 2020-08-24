@@ -1,5 +1,6 @@
 import React from 'react'
 import { LaunchesQuery } from '../../generated/graphql'
+import { Link } from 'react-router-dom'
 
 interface Props {
     data: LaunchesQuery
@@ -7,16 +8,19 @@ interface Props {
 
 const Launch: React.FC<Props> = ({ data }) => {
 
-    const displayData = data.launches?.map((launch, i) => {
+    const displayData = data.launches?.map((launch) => {
         return (
-            <div key={i}>
+            <div key={launch?.flight_number}>
                 <h2>{launch?.mission_name}</h2>
                 <h6>{launch?.launch_year}</h6>
                 <h6>{launch?.launch_success === true ? 'Success' : 'Failed'}</h6>
+                {/* <div>
+                    <Link to={`${launch?.flight_number}`} />
+                </div> */}
             </div>
         )
     })
-    
+
 
     return (
         <div>
@@ -26,6 +30,7 @@ const Launch: React.FC<Props> = ({ data }) => {
             <div>
                 {displayData}
             </div>
+
         </div>
     )
 }

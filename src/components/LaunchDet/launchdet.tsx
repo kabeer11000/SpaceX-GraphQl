@@ -1,13 +1,15 @@
 import React from 'react'
 import { LaunhDetailQuery } from '../../generated/graphql'
+// import ReactPlayer from "react-player"
+import { useParams } from 'react-router-dom'
 
 interface Props {
     data: LaunhDetailQuery
 }
 
 const LaunchDet: React.FC<Props> = ({ data }) => {
-
-    return (
+    
+        return (
         <div>
             <div>
                 <div>
@@ -30,12 +32,19 @@ const LaunchDet: React.FC<Props> = ({ data }) => {
                 </div>
                 {!!data.launch?.links && !!data.launch.links.flickr_images && (
                     <div>
-                        {data.launch.links.flickr_images.map(image => 
-                         image ? <img src={image} /> : null
+                        {data.launch.links.flickr_images.map((image, i) =>
+                            image ? <img src={image} key={i} height='300px' width="300px" /> : null
                         )}
                     </div>
                 )}
             </div>
+            {/* <div>
+            {!!data.launch?.links && !!data.launch.links.video_link && (
+                    <div>
+                        {<ReactPlayer url={data.launch.links.video_link} />}
+                    </div>
+                )}
+            </div> */}
         </div>
     )
 }
