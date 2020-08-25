@@ -1,48 +1,56 @@
 import React from 'react'
 import { LaunhDetailQuery } from '../../generated/graphql'
-
+import './stlyes.css'
+import { Link } from 'react-router-dom'
 interface Props {
     data: LaunhDetailQuery
 }
 
 const LaunchDet: React.FC<Props> = ({ data }) => {
-    
-        return (
-        <div>
-            <div>
+
+    return (
+        <div className='item-margin'>
+            <div className='box-item'>
                 <div>
-                    <h4>Flight : {data.launch?.flight_number}</h4>
+                    <div className='item-mission'>
+                        <span className='sp-one'>{`${data.launch?.flight_number}. `}</span>
+                        <span className='sp-two'>Mission: {data.launch?.mission_name}</span>
+                    </div>
+                    <div className='item-site'>
+                        <span className='sp-one'>Launch date: </span><span className='sp-3'>{data.launch?.launch_date_local}</span>
+                    </div>
+                    <hr /> 
+                    <div className='item-site'>
+                        <span className='sp-one'>status: <span className={data.launch?.launch_success ? 'true' : 'false'}>{data.launch?.launch_success ? 'sucessful' : 'failed'}</span></span>
+                    </div>
+                    <hr /> 
+                    <div className='item-site'>
+                        <span className='sp-one'>Rocket: </span><span className='sp-3'>{data.launch?.rocket?.rocket_name}</span>
+                    </div>
+                    <hr /> 
                 </div>
-                <div>
-                    <h2>Mission Name : {data.launch?.mission_name}</h2>
-                </div>
-                <div>
-                    <h3>Rocket : {data.launch?.rocket?.rocket_name}</h3>
-                </div>
-                <div>
-                    <h6>Date : {data.launch?.launch_date_local}</h6>
-                </div>
-                <div>
-                    <h6>Launch Site : {data.launch?.launch_site?.site_name}</h6>
-                </div>
-                <div>
+                <div className='item-p'>
                     <p>{data.launch?.details}</p>
                 </div>
-                {!!data.launch?.links && !!data.launch.links.flickr_images && (
-                    <div>
-                        {data.launch.links.flickr_images.map((image, i) =>
-                            image ? <img src={image} key={i} height='300px' width="300px" alt={i.toString()} /> : null
-                        )}
+                <hr />
+                {
+                    !!data.launch?.links && !!data.launch.links.flickr_images && (
+                        <div className='img-item'>
+                            {data.launch.links.flickr_images.map((image, i) =>
+                                image ? <div><img src={image} key={i} height='300px' width="300px" alt={i.toString()} /></div> : null
+                            )}
+                        </div>
+                    )
+                }
+                <hr />
+                <div className='launch-btu'>
+                        <Link to='/'>
+                            <button className='hvr-bounce-to-bottom launch-btn btn'>
+                                <span>Back</span>
+                            </button>
+                        </Link>
                     </div>
-                )}
-            </div>
-            {/* <div>
-            {!!data.launch?.links && !!data.launch.links.video_link && (
-                    <div>
-                        {<ReactPlayer url={data.launch.links.video_link} />}
-                    </div>
-                )}
-            </div> */}
+            </div >
         </div>
     )
 }

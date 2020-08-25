@@ -62,7 +62,7 @@
     text-transform: uppercase;
 }
 .sp-one{
-    color: #212121;
+    color: #212121 !important;
 }
 .launch-status{
     margin-bottom: 5px;
