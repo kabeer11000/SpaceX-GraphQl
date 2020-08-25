@@ -12,12 +12,22 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .launch-box{
     margin-bottom: 20px;
-    height: 200px;
+    min-height: 200px;
     width: 350px;
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+.launch-box:hover{
+    transform: scale(1.1);
+    margin-bottom: 20px;
+}
+.launch-margin{
+    margin-top: 20px;
+    margin-left: 20px;
 }
 .heading-space{
     text-align: center;
@@ -46,12 +56,13 @@
 }
 .launch-site span{
     font-size: 16px;
+    color: black;
     font-weight: 400;
     letter-spacing: .5px;
     text-transform: uppercase;
 }
 .sp-one{
-    color: #BDBDBD;
+    color: #212121;
 }
 .launch-status{
     margin-bottom: 5px;
@@ -71,8 +82,8 @@
 }
 
 .launch-btu{
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 8px;
+    margin-bottom: 10px;
     outline: none;
 }
 .launch-btu span{
@@ -81,4 +92,10 @@
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
+}
+@media(max-width:500px){
+    .display-div-launch{
+        margin-right: 25px;
+        margin-left: 25px;
+    }   
 }
