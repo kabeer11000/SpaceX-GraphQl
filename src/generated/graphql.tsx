@@ -744,6 +744,9 @@ export type LaunchesQuery = (
     & { links?: Maybe<(
       { __typename?: 'LaunchLinks' }
       & Pick<LaunchLinks, 'flickr_images'>
+    )>, launch_site?: Maybe<(
+      { __typename?: 'LaunchSite' }
+      & Pick<LaunchSite, 'site_name'>
     )> }
   )>>> }
 );
@@ -783,6 +786,9 @@ export const LaunchesDocument = gql`
     launch_success
     links {
       flickr_images
+    }
+    launch_site {
+      site_name
     }
   }
 }

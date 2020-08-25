@@ -1,6 +1,5 @@
 import React from 'react'
 import { LaunhDetailQuery } from '../../generated/graphql'
-// import ReactPlayer from "react-player"
 
 interface Props {
     data: LaunhDetailQuery
@@ -32,7 +31,7 @@ const LaunchDet: React.FC<Props> = ({ data }) => {
                 {!!data.launch?.links && !!data.launch.links.flickr_images && (
                     <div>
                         {data.launch.links.flickr_images.map((image, i) =>
-                            image ? <img src={image} key={i} height='300px' width="300px" /> : null
+                            image ? <img src={image} key={i} height='300px' width="300px" alt={i.toString()} /> : null
                         )}
                     </div>
                 )}

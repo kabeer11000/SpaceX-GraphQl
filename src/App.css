@@ -1,11 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&display=swap');
 *{
-    font-family: 'Cairo', sans-serif;
+    font-family: 'Roboto Mono', monospace;
     margin: 0;
+    color: white;
 }
 .loading-center{
     display: flex;
     justify-content: center;
     margin-top: 250px;
+}
+.main{
+    background-color: black;
+    min-height: 100vh;
 }

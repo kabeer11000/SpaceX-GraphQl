@@ -12,7 +12,9 @@ export const QUERY_LAUNCH = gql`
             links{
               flickr_images
             }
-        
+            launch_site{
+                site_name
+            }
         }
     }
 `

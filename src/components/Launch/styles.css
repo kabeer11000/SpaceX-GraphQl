@@ -17,10 +17,27 @@
 .launch-box{
     margin-bottom: 20px;
     height: 200px;
-    width: 300px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    width: 350px;
 }
-.launch-box:hover{
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+.heading-space{
+    text-align: center;
+    margin-bottom: 40px;
+}
+.heading-space h1{
+    font-size: 35px;
+    letter-spacing: 2px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+.launch-mission{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.launch-mission h2{
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.launch-site{
+    
 }
