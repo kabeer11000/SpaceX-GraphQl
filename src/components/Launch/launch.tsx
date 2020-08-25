@@ -1,21 +1,33 @@
 import React from 'react'
+// types 
 import { LaunchesQuery } from '../../generated/graphql'
+// route
 import { Link } from 'react-router-dom'
+// css 
+import './styles.css'
 
+
+// specfic types 
 interface Props {
     data: LaunchesQuery
 }
 
 const Launch: React.FC<Props> = ({ data }) => {
 
-    const displayData = data.launches?.map((launch) => {
+    // maping data 
+    const displayData = data.launches?.map((launch, i) => {
         return (
             <div key={launch?.flight_number}>
-                <h2>Mission : {launch?.mission_name}</h2>
-                <h6>{launch?.launch_year}</h6>
-                <h6>{launch?.launch_success === true ? 'Success' : 'Failed'}</h6>
+                <div className='launch-mission'>
+                    <span>{launch?.flight_number}. Mission : </span><span className={launch?.launch_success ? 'true' : 'false'}>{launch?.mission_name}</span>
+                </div>
                 <div>
-                    <Link to={`launch/${launch?.flight_number}`}>Details</Link>
+                    <h6>{launch?.launch_date_local?.toString()}</h6>
+                </div>
+                <div>
+                    <button>
+                        <Link to={`launch/${launch?.flight_number}`}>Details</Link>
+                    </button>
                 </div>
             </div>
         )
@@ -23,15 +35,14 @@ const Launch: React.FC<Props> = ({ data }) => {
 
 
     return (
-        <div>
-            <div>
-                <h1>SpaceX Launhes</h1>
+        <div className='display-div-launch'>
+            <div className='heading-space'>
+                <h1>space x</h1>
             </div>
-            <div>
+            <div className='display-data-launch'>
                 {displayData}
             </div>
-
-        </div>
+        </div >
     )
 }
 export default Launch;

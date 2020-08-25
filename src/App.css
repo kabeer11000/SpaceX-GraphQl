@@ -4,3 +4,8 @@
     font-family: 'Cairo', sans-serif;
     margin: 0;
 }
+.loading-center{
+    display: flex;
+    justify-content: center;
+    margin-top: 250px;
+}
