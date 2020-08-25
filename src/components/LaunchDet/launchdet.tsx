@@ -1,7 +1,6 @@
 import React from 'react'
 import { LaunhDetailQuery } from '../../generated/graphql'
 // import ReactPlayer from "react-player"
-import { useParams } from 'react-router-dom'
 
 interface Props {
     data: LaunhDetailQuery

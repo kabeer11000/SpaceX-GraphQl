@@ -17,7 +17,7 @@ const Launch: React.FC<Props> = ({ data }) => {
     // maping data 
     const displayData = data.launches?.map((launch, i) => {
         return (
-            <div key={launch?.flight_number}>
+            <div key={launch?.flight_number} className='launch-box'>
                 <div className='launch-mission'>
                     <span>{launch?.flight_number}. Mission : </span><span className={launch?.launch_success ? 'true' : 'false'}>{launch?.mission_name}</span>
                 </div>
