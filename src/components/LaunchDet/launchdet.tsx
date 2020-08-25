@@ -13,7 +13,7 @@ const LaunchDet: React.FC<Props> = ({ data }) => {
             <div className='box-item'>
                 <div>
                     <div className='item-mission'>
-                        <span className='sp-one'>{`${data.launch?.flight_number}. `}</span>
+                        <span className='sp-one'>{data.launch?.flight_number}. </span>
                         <span className='sp-two'>Mission: {data.launch?.mission_name}</span>
                     </div>
                     <div className='item-site'>
