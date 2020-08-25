@@ -3,6 +3,7 @@
     font-family: 'Roboto Mono', monospace;
     margin: 0;
     color: white;
+    text-decoration: none;
 }
 .loading-center{
     display: flex;

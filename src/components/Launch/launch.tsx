@@ -19,21 +19,26 @@ const Launch: React.FC<Props> = ({ data }) => {
         return (
             <div key={launch?.flight_number} className='launch-box'>
                 <div className='launch-mission'>
-                    <h2>{`${launch?.flight_number}. `}Mission: {launch?.mission_name}</h2>
+                    <span className='sp-one'>{`${launch?.flight_number}. `}</span>
+                    <Link to={`launch/${launch?.flight_number}`}>
+                    <span className='sp-two'>Mission: {launch?.mission_name}</span>
+                    </Link>
                 </div>
                 <div className='launch-site'>
-                    <h5>LaunchSite: {launch?.launch_site?.site_name}</h5>
+                    <span className='sp-one'>LaunchSite: </span><span>{launch?.launch_site?.site_name}</span>
                 </div>
-                <div>
-                    <h6>{launch?.launch_date_local?.toString()}</h6>
+                <div className='launch-site'>
+                    <span className='sp-one'>Launch year: </span><span>{launch?.launch_year}</span>
                 </div>
-                <div>
-                    <span>status: <span className={launch?.launch_success ? 'true' : 'false'}>{launch?.launch_success ? 'sucessful' : 'failed'}</span></span>
+                <div className='launch-status'>
+                    <span className='sp-one'>status: <span className={launch?.launch_success ? 'true' : 'false'}>{launch?.launch_success ? 'sucessful' : 'failed'}</span></span>
                 </div>
-                <div>
-                    <button>
-                        <Link to={`launch/${launch?.flight_number}`}>Details</Link>
-                    </button>
+                <div className='launch-btu'>
+                    <Link to={`launch/${launch?.flight_number}`}>
+                        <button className='hvr-bounce-to-bottom launch-btn'>
+                            <span>More</span>
+                        </button>
+                    </Link>
                 </div>
             </div>
         )

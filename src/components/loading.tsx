@@ -6,7 +6,7 @@ export default function Loading(){
 
     return(
         <div className='loading-center'>
-            <ReactLoading type={'bars'} color={'black'}/> 
+            <ReactLoading type={'bars'} color={'white'}/> 
         </div>
     )
 }

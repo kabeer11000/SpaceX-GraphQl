@@ -33,11 +33,52 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
-.launch-mission h2{
+.launch-mission span{
     font-size: 22px;
     font-weight: 600;
     text-transform: uppercase;
 }
+.sp-two{
+    color: #0091EA;
+}
 .launch-site{
-    
+    margin-bottom: 5px;
+}
+.launch-site span{
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+}
+.sp-one{
+    color: #BDBDBD;
+}
+.launch-status{
+    margin-bottom: 5px;
+}
+.launch-status span{
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: .5px;
+    text-transform: uppercase;    
+}
+.launch-btn{
+    height: 30px;
+    width: 100px;
+    border: none;
+    background-color: #BDBDBD;
+    outline: none;
+}
+
+.launch-btu{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    outline: none;
+}
+.launch-btu span{
+    color: black;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
