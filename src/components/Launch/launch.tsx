@@ -37,7 +37,6 @@ const Launch: React.FC<Props> = ({ data }) => {
     return (
         <div className='display-div-launch'>
             <div className='heading-space'>
-                <h1>space x</h1>
             </div>
             <div className='display-data-launch'>
                 {displayData}
